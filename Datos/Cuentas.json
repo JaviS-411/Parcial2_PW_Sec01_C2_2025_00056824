@@ -1,58 +1,58 @@
 [
   {
-    "_id": "1",
+    "_id": "68f9bf0c5b3959b053fb8b28",
     "isActive": true,
     "picture": "https://picsum.photos/200/300",
-    "balance": "$25223",
-    "client": "Katie Woodard",
+    "balance": "$1,070.57",
+    "client": "Dee Morrow",
     "gender": "female"
   },
   {
-    "_id": "2",
+    "_id": "68f9bf0c8e7aed03fd1ac549",
     "isActive": true,
     "picture": "https://picsum.photos/200/300",
-    "balance": "$67",
+    "balance": "$67.00",
     "client": "Alexander Parada",
     "gender": "male"
   },
   {
-    "_id": "3",
-    "isActive": true,
+    "_id": "68f9bf0c7d07aebdce472090",
+    "isActive": false,
     "picture": "https://picsum.photos/200/300",
-    "balance": "$1923",
-    "client": "Josue Villalobos",
-    "gender": "male"
-  },
-  {
-    "_id": "4",
-    "isActive": true,
-    "picture": "https://picsum.photos/200/300",
-    "balance": "$49023",
-    "client": "Fernanda Suarez",
+    "balance": "$1,553.75",
+    "client": "Earnestine Johns",
     "gender": "female"
   },
   {
-    "_id": "5",
-    "isActive": true,
+    "_id": "68f9bf0c6159ef2117c35bff",
+    "isActive": false,
     "picture": "https://picsum.photos/200/300",
-    "balance": "$62904",
-    "client": "Alejandro Martinez",
+    "balance": "$1,758.23",
+    "client": "Price Potts",
     "gender": "male"
   },
   {
-    "_id": "6",
-    "isActive": true,
+    "_id": "68f9bf0cfb0d32858082c4a0",
+    "isActive": false,
     "picture": "https://picsum.photos/200/300",
-    "balance": "$1",
-    "client": "Pedro Gomez",
-    "gender": "male"
+    "balance": "$2,616.20",
+    "client": "Opal Pope",
+    "gender": "female"
   },
   {
-    "_id": "7",
-    "isActive": true,
+    "_id": "68f9bf0ca83553afd5f69224",
+    "isActive": false,
     "picture": "https://picsum.photos/200/300",
-    "balance": "$8839",
-    "client": "Luis Ramirez",
+    "balance": "$3,422.21",
+    "client": "Chasity Fisher",
+    "gender": "female"
+  },
+  {
+    "_id": "68f9bf0ce103433d9e5155a0",
+    "isActive": false,
+    "picture": "https://picsum.photos/200/300",
+    "balance": "$1,812.15",
+    "client": "Obrien Knapp",
     "gender": "male"
   }
 ]
