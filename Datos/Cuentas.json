@@ -1,0 +1,58 @@
+[
+  {
+    "_id": "1",
+    "isActive": true,
+    "picture": "https://picsum.photos/200/300",
+    "balance": "$25223",
+    "client": "Katie Woodard",
+    "gender": "female"
+  },
+  {
+    "_id": "2",
+    "isActive": true,
+    "picture": "https://picsum.photos/200/300",
+    "balance": "$67",
+    "client": "Alexander Parada",
+    "gender": "male"
+  },
+  {
+    "_id": "3",
+    "isActive": true,
+    "picture": "https://picsum.photos/200/300",
+    "balance": "$1923",
+    "client": "Josue Villalobos",
+    "gender": "male"
+  },
+  {
+    "_id": "4",
+    "isActive": true,
+    "picture": "https://picsum.photos/200/300",
+    "balance": "$49023",
+    "client": "Fernanda Suarez",
+    "gender": "female"
+  },
+  {
+    "_id": "5",
+    "isActive": true,
+    "picture": "https://picsum.photos/200/300",
+    "balance": "$62904",
+    "client": "Alejandro Martinez",
+    "gender": "male"
+  },
+  {
+    "_id": "6",
+    "isActive": true,
+    "picture": "https://picsum.photos/200/300",
+    "balance": "$1",
+    "client": "Pedro Gomez",
+    "gender": "male"
+  },
+  {
+    "_id": "7",
+    "isActive": true,
+    "picture": "https://picsum.photos/200/300",
+    "balance": "$8839",
+    "client": "Luis Ramirez",
+    "gender": "male"
+  }
+]

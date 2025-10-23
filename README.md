@@ -1,1 +1,3 @@
 # Parcial2_PW_Sec01_C2_2025_00056824
+
+Javier Alejandro Salamanca Reyes 00056824

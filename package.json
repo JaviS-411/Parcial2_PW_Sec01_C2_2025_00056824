@@ -1,0 +1,23 @@
+{
+  "name": "parcial2_pw_sec01_c2_2025_00056824",
+  "version": "1.0.0",
+  "description": "Javier Alejandro Salamanca Reyes 00056824",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaviS-411/Parcial2_PW_Sec01_C2_2025_00056824.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JaviS-411/Parcial2_PW_Sec01_C2_2025_00056824/issues"
+  },
+  "homepage": "https://github.com/JaviS-411/Parcial2_PW_Sec01_C2_2025_00056824#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
