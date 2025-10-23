@@ -8,11 +8,8 @@ http://localhost:3130/cuentas
 //Busqueda ID  
 http://localhost:3130/cuenta/"id"  
   
-// Buscar por genero  
-http://localhost:3130/cuentas?queryParam="Genero"  
-  
 // Buscar por parametro  
-http://localhost:3130/cuentas?queryParam="Parametro"  
+http://localhost:3130/cuentas?"queryParam(_id,gender,isActive,client,balance)"="valor"  
   
-//Buscar por Balance  
-http://localhost:3130/cuentasBalance?balance=$"Dinero con 2 decimales"  
+//Buscar balance total  
+http://localhost:3130/cuentasBalance  
