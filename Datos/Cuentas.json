@@ -1,7 +1,7 @@
 [
   {
     "_id": "68f9bf0c5b3959b053fb8b28",
-    "isActive": true,
+    "isActive": false,
     "picture": "https://picsum.photos/200/300",
     "balance": "$1,070.57",
     "client": "Dee Morrow",
@@ -33,7 +33,7 @@
   },
   {
     "_id": "68f9bf0cfb0d32858082c4a0",
-    "isActive": false,
+    "isActive": true,
     "picture": "https://picsum.photos/200/300",
     "balance": "$2,616.20",
     "client": "Opal Pope",

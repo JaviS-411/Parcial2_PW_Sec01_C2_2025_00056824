@@ -9,62 +9,60 @@ const obtenerTodas = (req, res) => {
 
 const obtenerPorId = (req, res) => {
   const cuenta = cuentas.find(c => c._id === req.params.id);
-  console.log('Buscando ID:', req.params.id);
-  console.log('Cuenta encontrada:', cuenta);
   res.json({
     finded: !!cuenta,
-    account: cuenta || null,
-    data: undefined
+    account: cuenta || null
   });
 };
 
 const obtenerPorParametro = (req, res) => {
-  const { queryParam } = req.query;
-  
-  if (!queryParam) {
-    return res.json({
-      finded: false,
-      account: null
+  const query = req.query;
+  let resultados = cuentas;
+
+  if (query._id) {
+    resultados = resultados.filter(c => c._id === query._id);
+  }
+  if (query.client) {
+    resultados = resultados.filter(c => c.client.toLowerCase().includes(query.client.toLowerCase()));
+  }
+  if (query.gender) {
+    resultados = resultados.filter(c => c.gender.toLowerCase() === query.gender.toLowerCase());
+  }
+  if (query.isActive) {
+    resultados = resultados.filter(c => c.isActive === (query.isActive === 'true'));
+  }
+  if (query.balance) {
+    // Normalizar el formato del balance recibido y el de la cuenta para comparar correctamente
+    const balanceParam = parseFloat(query.balance.replace(/[^0-9.-]+/g, ""));
+    resultados = resultados.filter(c => {
+      const cuentaBalance = parseFloat(c.balance.replace(/[^0-9.-]+/g, ""));
+      return cuentaBalance === balanceParam;
     });
   }
 
-  const resultados = cuentas.filter(cuenta => 
-    cuenta._id === queryParam ||
-    cuenta.client.toLowerCase().includes(queryParam.toLowerCase()) ||
-    cuenta.gender.toLowerCase() === queryParam.toLowerCase()
-  );
-
+  if (resultados.length === 0) {
+    return res.json({
+      finded: false,
+      message: 'No se ha encontrado ninguna cuenta con ese valor.'
+    });
+  }
   res.json({
-    finded: resultados.length > 0,
+    finded: true,
     account: resultados.length === 1 ? resultados[0] : undefined,
     data: resultados.length > 1 ? resultados : undefined
   });
 };
 
-const obtenerPorBalance = (req, res) => {
-  const balanceBuscado = req.query.balance;
-  
-  if (!balanceBuscado) {
-    return res.json({
-      finded: false,
-      account: null
-    });
-  }
-
-  // Limpiar el balance buscado (quitar $ y comas)
-  const balanceLimpio = parseFloat(balanceBuscado.replace(/[$,]/g, '')).toFixed(2);
-  console.log('Balance buscado limpio:', balanceLimpio);
-  
-  const cuentasEncontradas = cuentas.filter(cuenta => {
-    const balanceCuenta = parseFloat(cuenta.balance.replace(/[$,]/g, '')).toFixed(2);
-    console.log('Comparando con balance:', balanceCuenta);
-    return balanceCuenta === balanceLimpio;
-  });
+const obtenerBalanceTotal = (req, res) => {
+  const activos = cuentas.filter(c => c.isActive);
+  const total = activos.reduce((acc, c) => {
+    const monto = parseFloat(c.balance.replace(/[^0-9.-]+/g, ""));
+    return acc + monto;
+  }, 0);
 
   res.json({
-    finded: cuentasEncontradas.length > 0,
-    account: cuentasEncontradas.length === 1 ? cuentasEncontradas[0] : null,
-    data: cuentasEncontradas.length > 1 ? cuentasEncontradas : undefined
+    status: activos.length > 0,
+    accountBalance: `$${total.toFixed(2)}`
   });
 };
 
@@ -72,5 +70,5 @@ module.exports = {
   obtenerTodas,
   obtenerPorId,
   obtenerPorParametro,
-  obtenerPorBalance
+  obtenerBalanceTotal
 };

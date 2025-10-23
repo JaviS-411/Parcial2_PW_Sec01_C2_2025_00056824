@@ -4,22 +4,19 @@ const {
   obtenerTodas,
   obtenerPorId,
   obtenerPorParametro,
-  obtenerPorBalance
+  obtenerBalanceTotal
 } = require('../Controladores/Cuentas_Controlador');
 
-// Ruta combinada para /cuentas (lista completa y búsqueda por queryParam)
 router.get('/cuentas', (req, res) => {
-  if (req.query.queryParam) {
+  // Si hay algún parámetro de consulta, filtra; si no, devuelve todas
+  if (Object.keys(req.query).length > 0) {
     obtenerPorParametro(req, res);
   } else {
     obtenerTodas(req, res);
   }
 });
 
-// Ruta para obtener cuenta por ID
 router.get('/cuenta/:id', obtenerPorId);
-
-// Ruta para buscar por balance
-router.get('/cuentasBalance', obtenerPorBalance);
+router.get('/cuentasBalance', obtenerBalanceTotal);
 
 module.exports = router;
